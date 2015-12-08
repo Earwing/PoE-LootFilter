@@ -1,0 +1,241 @@
+﻿# Script edited with Filtration - https://github.com/ben-wallis/Filtration
+
+Show
+    Class "Quest Items"
+
+# Currency Tier Highlighting
+Show
+    BaseType "Exalted Orb" "Eternal Orb" "Divine Orb" "Mirror of Kalandra"
+    SetTextColor 170 158 130
+    SetBorderColor 170 158 130
+    SetFontSize 42
+    PlayAlertSound 7 100
+
+Show
+    BaseType "Chaos Orb" "Gemcutter's Prism" "Regal Orb" "Orb of Alchemy" "Vaal Orb" "Orb of Fusing" "Orb of Scouring" "Blessed Orb" "Cartographer's Chisel" "Orb of Regret"
+    SetTextColor 170 158 130
+    SetFontSize 40
+    PlayAlertSound 7 80
+
+Show
+    Class "Currency"
+    SetFontSize 38
+
+Show
+    Class "Maps" "Map Fragments"
+    SetBorderColor 210 0 0
+    SetFontSize 40
+    PlayAlertSound 6 79
+
+# Divination Cards
+Show
+    Class "Card"
+    SetBorderColor 30 144 255
+    SetFontSize 38
+    PlayAlertSound 5 79
+
+# Distinguish Jewels
+Show
+    Class "Jewel"
+    SetBorderColor 152 65 199 200
+    SetFontSize 38
+
+Show
+    Class "Fishing Rods"
+    SetBackgroundColor 255 192 203
+    SetFontSize 45
+    PlayAlertSound 7 100
+
+Show
+    LinkedSockets = 6
+    SetBorderColor 255 255 255
+    SetFontSize 45
+    PlayAlertSound 2 100
+
+Show
+    LinkedSockets = 5
+    SetBorderColor 255 255 255
+    SetFontSize 40
+    PlayAlertSound 2 79
+
+Show
+    Rarity = Unique
+    SetFontSize 38
+    PlayAlertSound 1 79
+
+# Section: Recipes
+
+Show
+    Sockets = 6
+    SetBackgroundColor 33 30 26
+    SetBorderColor 0 128 0
+    SetFontSize 40
+    PlayAlertSound 7 70
+
+Show
+    LinkedSockets >= 3
+    SocketGroup "RGB"
+    SetBorderColor 0 128 0
+
+Show
+    Rarity = Normal
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    SetBorderColor 255 165 0
+
+# bows are the only 2 handed weapons which may take 3*2 slots
+Show
+    ItemLevel >= 75
+    Rarity = Rare
+    Height <= 3
+    Class "Body Armours" "Helmets" "Gloves" "Boots" "Amulets" "Rings" "Belts" "Bows"
+    SetTextColor 255 255 119
+    SetBackgroundColor 0 0 0
+    SetBorderColor 0 100 150 200
+
+# some one handed weapons
+Show
+    ItemLevel >= 75
+    Rarity = Rare
+    Width = 1
+    Height = 3
+    SetTextColor 255 255 119
+    SetBackgroundColor 0 0 0
+    SetBorderColor 0 100 150 200
+
+# bows are the only 2 handed weapons which may take 3*2 slots
+Show
+    ItemLevel >= 60
+    Rarity = Rare
+    Height <= 3
+    Class "Helmets" "Body Armours" "Gloves" "Boots" "Amulets" "Rings" "Belts" "Bows"
+    SetTextColor 255 255 119
+    SetBorderColor 170 158 130
+
+Show
+    ItemLevel >= 60
+    Rarity = Rare
+    Width = 1
+    Height = 3
+    SetTextColor 255 255 119
+    SetBorderColor 170 158 130
+
+# To alch for 1 regal recipe
+Show
+    ItemLevel >= 75
+    Rarity = Normal
+    Class "Amulets"
+    SetBorderColor 54 100 146
+
+# To alch for 1 regal recipe
+Show
+    ItemLevel >= 75
+    Rarity = Normal
+    BaseType "Two-Stone Ring" "Prismatic Ring" "Topaz Ring" "Ruby Ring" "Sapphire Ring" "Diamond Ring"
+    SetBorderColor 54 100 146
+
+# Section: Misc
+
+#Disabled Block Start
+#Show
+#    ItemLevel >= 73
+#    BaseType "Harbinger Bow"
+#    SetBorderColor 255 192 203
+#Disabled Block End
+
+Show
+    LinkedSockets = 4
+    Class "Body Armours" "Boots" "Gloves" "Helmets" "Bows"
+    SetBorderColor 128 128 128
+
+# 3L in Normal, exept weapons, yet bow for Poison Arrow
+Show
+    ItemLevel <= 40
+    LinkedSockets = 3
+    Class "Body Armours" "Helmets" "Gloves" "Boots" "Shields" "Bows"
+    SetBorderColor 127 127 127
+
+Show
+    Quality = 20
+    SetBorderColor 136 136 255
+
+Show
+    Quality > 0
+    Class "Flasks" "Gems"
+    SetBorderColor 184 218 242
+
+Show
+    Rarity = Rare
+
+Show
+    ItemLevel <= 13
+
+Show
+    ItemLevel <= 20
+    DropLevel >= 10
+
+# Maraketh bases
+Show
+    BaseType "Sai" "Fleshripper" "Eclipse Staff" "Dragoon Sword" "Gemini Claw" "Exquisite Blade" "Behemoth Mace" "Maraketh Bow" "Tiger Hook" "Profane Wand" "Runic Hatchet" "Sambar Sceptre" "Coronal Maul" "Sacrificial Garb"
+
+Show
+    Class "Amulets" "Rings" "Belts"
+
+Show
+    BaseType "Enlighten" "Enhance" "Empower"
+    SetBorderColor 27 162 155
+    SetFontSize 42
+    PlayAlertSound 2 79
+
+Show
+    BaseType "Added Chaos Damage" "Portal" "Detonate Mines" "Cast when Damage Taken"
+    SetBorderColor 27 162 155
+
+Show
+    Class "Active Skill Gems" "Support Skill Gems"
+
+# Section: Flasks
+
+# Useful Flasks
+Show
+    Class "Utility Flasks"
+
+Show
+    BaseType "Eternal Life Flask" "Divine Life Flask" "Divine Mana Flask"
+
+Show
+    ItemLevel < 60
+    BaseType "Hallowed" "Sanctified"
+
+Show
+    ItemLevel < 42
+    BaseType "Sacred"
+
+Show
+    ItemLevel < 36
+    Class "Flasks"
+    BaseType "Colossal"
+
+Show
+    ItemLevel < 30
+    BaseType "Giant"
+
+Show
+    ItemLevel < 24
+    BaseType "Grand"
+
+Show
+    ItemLevel < 18
+    BaseType "Greater"
+
+Show
+    ItemLevel < 60
+    Class "Flasks"
+    SetFontSize 25
+
+# Section: Hide
+
+# Hide Everything Else of Little to No Value
+Hide
+    SetBackgroundColor 17 17 17 100
+    SetFontSize 26
+
