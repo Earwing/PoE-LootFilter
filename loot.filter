@@ -1,7 +1,15 @@
 ﻿# Script edited with Filtration - https://github.com/ben-wallis/Filtration
 
 Show
+    Class "Amulets"
+    BaseType "Talisman"
+    SetBorderColor 210 0 0
+    SetFontSize 45
+    PlayAlertSound 4 100
+
+Show
     Class "Quest Items"
+    SetFontSize 40
 
 # Currency Tier Highlighting
 Show
@@ -23,7 +31,7 @@ Show
 
 Show
     Class "Maps" "Map Fragments"
-    SetBorderColor 210 0 0
+    SetBorderColor 255 40 0 220
     SetFontSize 40
     PlayAlertSound 6 79
 
@@ -31,14 +39,14 @@ Show
 Show
     Class "Card"
     SetBorderColor 30 144 255
-    SetFontSize 38
+    SetFontSize 40
     PlayAlertSound 5 79
 
 # Distinguish Jewels
 Show
     Class "Jewel"
-    SetBorderColor 152 65 199 200
-    SetFontSize 38
+    SetBorderColor 208 32 144
+    SetFontSize 40
 
 Show
     Class "Fishing Rods"
@@ -187,7 +195,20 @@ Show
     PlayAlertSound 2 79
 
 Show
-    BaseType "Added Chaos Damage" "Portal" "Detonate Mines" "Cast when Damage Taken"
+    Class "Skill Gems"
+    BaseType "Vaal"
+    SetBorderColor 210 0 0
+
+# Drop only gems + gems which are good to have lvl 1
+Show
+    BaseType "Portal" "Detonate Mines" "Added Chaos Damage" "Cast when Damage Taken" "Immortal Call"
+    SetBorderColor 27 162 155
+    PlayAlertSound 2 50
+
+# 1 alch / 1 chance often used gems, good to grab during leveling
+Show
+    ItemLevel < 68
+    BaseType "Spell Echo" "Multistrike" "Greater Multiple Projectiles" "Golem" "Purity" "Hatred" "Wrath" "Anger" "Discipline" "Determination" "Grace" "Generosity" "Fortify"
     SetBorderColor 27 162 155
 
 Show
@@ -227,6 +248,7 @@ Show
     ItemLevel < 18
     BaseType "Greater"
 
+# To fill inventory efficiently
 Show
     ItemLevel < 60
     Class "Flasks"
