@@ -3,6 +3,7 @@
 Show
     Class "Amulets"
     BaseType "Talisman"
+    SetBackgroundColor 210 0 3 71
     SetBorderColor 210 0 0
     SetFontSize 45
     PlayAlertSound 4 100
@@ -90,6 +91,13 @@ Show
     BaseType "Gavel" "Stone Hammer" "Rock Breaker"
     SetBorderColor 255 165 0
 
+Show
+    ItemLevel >= 75
+    Class "Amulets" "Rings" "Belts"
+    SetTextColor 255 255 119
+    SetBorderColor 54 100 146
+    SetFontSize 40
+
 # bows are the only 2 handed weapons which may take 3*2 slots
 Show
     ItemLevel >= 75
@@ -109,6 +117,14 @@ Show
     SetTextColor 255 255 119
     SetBackgroundColor 0 0 0
     SetBorderColor 0 100 150 200
+
+Show
+    ItemLevel >= 60
+    Rarity = Rare
+    Class "Amulets" "Rings" "Belts"
+    SetTextColor 255 255 119
+    SetBorderColor 170 158 130
+    SetFontSize 40
 
 # bows are the only 2 handed weapons which may take 3*2 slots
 Show
@@ -143,13 +159,12 @@ Show
 
 # Section: Misc
 
-#Disabled Block Start
-#Show
-#    ItemLevel >= 73
-#    BaseType "Harbinger Bow"
-#    SetBorderColor 255 192 203
-#Disabled Block End
+Show
+    ItemLevel >= 73
+    BaseType "Harbinger Bow" "Astral Plate"
+    SetBorderColor 255 192 203
 
+# not weapons because 4L is less important on them, except bows because of potential +x to socketed gems
 Show
     LinkedSockets = 4
     Class "Body Armours" "Boots" "Gloves" "Helmets" "Bows"
@@ -158,8 +173,7 @@ Show
 # 3L in Normal, exept weapons, yet bow for Poison Arrow
 Show
     ItemLevel <= 40
-    LinkedSockets = 3
-    Class "Body Armours" "Helmets" "Gloves" "Boots" "Shields" "Bows"
+    LinkedSockets >= 3
     SetBorderColor 127 127 127
 
 Show
@@ -174,16 +188,14 @@ Show
 Show
     Rarity = Rare
 
-Show
-    ItemLevel <= 13
-
-Show
-    ItemLevel <= 20
-    DropLevel >= 10
-
 # Maraketh bases
 Show
     BaseType "Sai" "Fleshripper" "Eclipse Staff" "Dragoon Sword" "Gemini Claw" "Exquisite Blade" "Behemoth Mace" "Maraketh Bow" "Tiger Hook" "Profane Wand" "Runic Hatchet" "Sambar Sceptre" "Coronal Maul" "Sacrificial Garb"
+
+Show
+    ItemLevel >= 40
+    BaseType "Gold Ring"
+    SetBorderColor 175 96 37
 
 Show
     Class "Amulets" "Rings" "Belts"
@@ -248,16 +260,71 @@ Show
     ItemLevel < 18
     BaseType "Greater"
 
+Show
+    ItemLevel < 12
+    Class "Flasks"
+
 # To fill inventory efficiently
 Show
     ItemLevel < 60
     Class "Flasks"
     SetFontSize 25
 
+Hide
+    Class "Flasks"
+
+# Section: Low level
+
+Show
+    ItemLevel <= 13
+
+Show
+    ItemLevel <= 20
+    DropLevel >= 12
+    SetFontSize 30
+
+Show
+    ItemLevel <= 25
+    DropLevel >= 19
+    SetFontSize 30
+
+Show
+    ItemLevel <= 30
+    DropLevel >= 24
+    SetFontSize 30
+
+Show
+    ItemLevel <= 35
+    DropLevel >= 29
+    SetFontSize 30
+
+Show
+    ItemLevel <= 40
+    DropLevel >= 34
+    SetFontSize 30
+
 # Section: Hide
 
-# Hide Everything Else of Little to No Value
 Hide
-    SetBackgroundColor 17 17 17 100
-    SetFontSize 26
+    Rarity = Magic
+    Class "Helmets"
+    SetBackgroundColor 255 0 4 101
+    SetFontSize 40
+
+Hide
+    Class "Body Armours" "Helmets" "Gloves" "Boots"
+    SetFontSize 25
+
+Hide
+    Class "Shields" "Quivers"
+    SetFontSize 25
+
+Hide
+    Class "Wands" "Daggers" "Claws" "Swords" "Axes" "Maces" "Staves" "Bows" "Sceptres"
+    SetFontSize 25
+
+# Check that nothing has been forgotten
+Show
+    SetBackgroundColor 255 40 0 220
+    SetFontSize 45
 
